@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediKiosk - Patient Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>MediKiosk</h1>
+        <p>AI-Assisted Patient Case Taking</p>
+    </header>
+
+    <main class="container">
+
+        <!-- LOGIN SECTION -->
+        <section id="loginSection" class="card">
+            <h2 data-en="Patient Login" data-kn="ರೋಗಿ ಲಾಗಿನ್">
+                Patient Login
+            </h2>
+
+            <p data-en="Welcome! Please log in to continue."
+               data-kn="ಸ್ವಾಗತ! ಮುಂದುವರಿಯಲು ಲಾಗಿನ್ ಮಾಡಿ.">
+                Welcome! Please log in to continue.
+            </p>
+
+            <label for="language">Select Language</label>
+            <select id="language">
+                <option value="en">English</option>
+                <option value="kn">ಕನ್ನಡ (Kannada)</option>
+            </select>
+
+            <form id="loginForm">
+                <label for="email" data-en="Email Address"
+                       data-kn="ಇಮೇಲ್ ವಿಳಾಸ">Email Address</label>
+                <input type="email" id="email" required
+                       placeholder="Enter your email">
+
+                <label for="password" data-en="Password"
+                       data-kn="ಪಾಸ್‌ವರ್ಡ್">Password</label>
+                <input type="password" id="password" required
+                       minlength="6" placeholder="Enter password">
+
+                <button type="submit" class="primary-btn"
+                        data-en="Login" data-kn="ಲಾಗಿನ್">
+                    Login
+                </button>
+            </form>
+
+            <p id="loginMessage" class="message"></p>
+            <p class="small-text">Demo login: use any valid email and a password of at least 6 characters.</p>
+        </section>
+
+
+        <!-- QUESTIONNAIRE SECTION -->
+        <section id="questionnaireSection" class="card hidden">
+
+            <div class="top-row">
+                <div>
+                    <h2 data-en="Patient Questionnaire"
+                        data-kn="ರೋಗಿಯ ಪ್ರಶ್ನಾವಳಿ">
+                        Patient Questionnaire
+                    </h2>
+                    <p data-en="Please provide your basic medical information."
+                       data-kn="ನಿಮ್ಮ ಮೂಲ ವೈದ್ಯಕೀಯ ಮಾಹಿತಿಯನ್ನು ನೀಡಿ.">
+                        Please provide your basic medical information.
+                    </p>
+                </div>
+
+                <button type="button" id="logoutBtn" class="logout-btn"
+                        data-en="Logout" data-kn="ಲಾಗ್ ಔಟ್">
+                    Logout
+                </button>
+            </div>
+
+            <form id="patientForm">
+
+                <h3 data-en="1. Personal Details"
+                    data-kn="1. ವೈಯಕ್ತಿಕ ವಿವರಗಳು">
+                    1. Personal Details
+                </h3>
+
+                <label for="patientName" data-en="Full Name"
+                       data-kn="ಪೂರ್ಣ ಹೆಸರು">Full Name</label>
+                <input type="text" id="patientName" name="patientName"
+                       required>
+
+                <label for="age" data-en="Age" data-kn="ವಯಸ್ಸು">Age</label>
+                <input type="number" id="age" name="age"
+                       min="1" max="120" required>
+
+                <label for="gender" data-en="Gender" data-kn="ಲಿಂಗ">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Other">Other</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
+                </select>
+
+                <h3 data-en="2. Medical Information"
+                    data-kn="2. ವೈದ್ಯಕೀಯ ಮಾಹಿತಿ">
+                    2. Medical Information
+                </h3>
+
+                <label for="speciality" data-en="Choose Department"
+                       data-kn="ವಿಭಾಗವನ್ನು ಆಯ್ಕೆಮಾಡಿ">
+                    Choose Department
+                </label>
+
+                <select id="speciality" name="speciality" required>
+                    <option value="">Select Department</option>
+                    <option value="General Medicine">General Medicine</option>
+                    <option value="Cardiology">Cardiology</option>
+                    <option value="Dermatology">Dermatology</option>
+                    <option value="Orthopedics">Orthopedics</option>
+                    <option value="Neurology">Neurology</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <h3 data-en="3. Current Symptoms"
+                    data-kn="3. ಪ್ರಸ್ತುತ ಲಕ್ಷಣಗಳು">
+                    3. Current Symptoms
+                </h3>
+
+                <label for="symptoms" data-en="Describe your symptoms"
+                       data-kn="ನಿಮ್ಮ ಲಕ್ಷಣಗಳನ್ನು ವಿವರಿಸಿ">
+                    Describe your symptoms
+                </label>
+                <textarea id="symptoms" name="symptoms" rows="4"
+                          placeholder="Describe what you are experiencing..."
+                          required></textarea>
+
+                <label for="onset" data-en="When did it start?"
+                       data-kn="ಇದು ಯಾವಾಗ ಪ್ರಾರಂಭವಾಯಿತು?">
+                    When did it start?
+                </label>
+                <input type="text" id="onset" name="onset"
+                       placeholder="Example: 2 days ago">
+
+                <label for="duration" data-en="Duration"
+                       data-kn="ಅವಧಿ">Duration</label>
+                <input type="text" id="duration" name="duration"
+                       placeholder="Example: 30 minutes">
+
+                <label for="frequency" data-en="How often does it occur?"
+                       data-kn="ಇದು ಎಷ್ಟು ಬಾರಿ ಸಂಭವಿಸುತ್ತದೆ?">
+                    How often does it occur?
+                </label>
+                <select id="frequency" name="frequency">
+                    <option value="">Select</option>
+                    <option value="Constant">Constant</option>
+                    <option value="Occasionally">Occasionally</option>
+                    <option value="Daily">Daily</option>
+                    <option value="Rarely">Rarely</option>
+                </select>
+
+                <h3 data-en="4. Previous Medical History"
+                    data-kn="4. ಹಿಂದಿನ ವೈದ್ಯಕೀಯ ಇತಿಹಾಸ">
+                    4. Previous Medical History
+                </h3>
+
+                <label for="illness" data-en="Previous illnesses"
+                       data-kn="ಹಿಂದಿನ ಕಾಯಿಲೆಗಳು">
+                    Previous illnesses
+                </label>
+                <textarea id="illness" name="illness" rows="2"></textarea>
+
+                <label for="surgery" data-en="Previous surgeries"
+                       data-kn="ಹಿಂದಿನ ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಗಳು">
+                    Previous surgeries
+                </label>
+                <textarea id="surgery" name="surgery" rows="2"></textarea>
+
+                <label for="medications" data-en="Current medications"
+                       data-kn="ಪ್ರಸ್ತುತ ಔಷಧಿಗಳು">
+                    Current medications
+                </label>
+                <textarea id="medications" name="medications" rows="2"></textarea>
+
+                <label for="allergies" data-en="Known allergies"
+                       data-kn="ತಿಳಿದಿರುವ ಅಲರ್ಜಿಗಳು">
+                    Known allergies
+                </label>
+                <textarea id="allergies" name="allergies" rows="2"></textarea>
+
+                <div class="button-group">
+                    <button type="button" id="saveBtn" class="primary-btn"
+                            data-en="Save Draft" data-kn="ಉಳಿಸಿ">
+                        Save Draft
+                    </button>
+
+                    <button type="button" id="loadBtn" class="secondary-btn"
+                            data-en="Reload Saved Answers" data-kn="ಉಳಿಸಿದ ಉತ್ತರಗಳನ್ನು ಮರುಲೋಡ್ ಮಾಡಿ">
+                        Reload Saved Answers
+                    </button>
+
+                    <button type="submit" class="submit-btn"
+                            data-en="Submit Questionnaire" data-kn="ಪ್ರಶ್ನಾವಳಿಯನ್ನು ಸಲ್ಲಿಸಿ">
+                        Submit Questionnaire
+                    </button>
+                </div>
+
+                <p id="formMessage" class="message"></p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>©️ 2026 MediKiosk | Student Project Prototype</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

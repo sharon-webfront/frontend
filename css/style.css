@@ -1,0 +1,283 @@
+/* =================================
+   MEDIKIOSK - HEALTHCARE THEME
+================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #087f83;
+    --primary-dark: #075e63;
+    --navy: #173b57;
+    --mint: #e5f5f1;
+    --light-blue: #edf6fb;
+    --background: #f3f8fa;
+    --white: #ffffff;
+    --text: #263d4d;
+    --muted: #718493;
+    --border: #dce8ed;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+.header {
+    background: linear-gradient(120deg, #075e63, #087f83, #39a69b);
+    color: white;
+    text-align: center;
+    padding: 35px 20px 40px;
+    box-shadow: 0 4px 15px rgba(7, 94, 99, 0.15);
+}
+
+.header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.header p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #e0f5f1;
+    letter-spacing: 0.5px;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    width: 90%;
+    max-width: 780px;
+    margin: 40px auto;
+}
+
+/* CARDS */
+
+.card {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 35px rgba(32, 74, 95, 0.08);
+}
+
+h2 {
+    color: var(--navy);
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.card > p {
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+h3 {
+    color: var(--primary-dark);
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 14px;
+    padding: 10px 13px;
+    background: var(--mint);
+    border-left: 4px solid var(--primary);
+    border-radius: 5px;
+}
+
+/* LABELS */
+
+label {
+    display: block;
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 17px;
+    margin-bottom: 7px;
+}
+
+/* INPUTS */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: #fbfdfe;
+    transition: 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #a2b0ba;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(8, 127, 131, 0.12);
+    background: white;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 75px;
+}
+
+/* BUTTONS */
+
+button {
+    border: none;
+    border-radius: 9px;
+    padding: 13px 19px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.93;
+}
+
+.primary-btn {
+    background: var(--primary);
+    color: white;
+}
+
+.primary-btn:hover {
+    background: var(--primary-dark);
+}
+
+.secondary-btn {
+    background: var(--light-blue);
+    color: var(--navy);
+    border: 1px solid #d6e6ef;
+}
+
+.submit-btn {
+    background: var(--navy);
+    color: white;
+}
+
+.logout-btn {
+    background: #fff0ef;
+    color: #b64b46;
+    padding: 10px 16px;
+    margin-top: 0;
+}
+
+/* BUTTON GROUP */
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.button-group button {
+    margin-top: 0;
+}
+
+/* LOGIN BUTTON */
+
+#loginForm .primary-btn {
+    width: 100%;
+    margin-top: 25px;
+}
+
+/* TOP ROW */
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+/* MESSAGES */
+
+.message {
+    margin-top: 17px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.small-text {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 14px;
+}
+
+/* HIDDEN SECTION */
+
+.hidden {
+    display: none;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 25px 15px;
+    font-size: 13px;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 27px 15px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .container {
+        width: 94%;
+        margin: 22px auto;
+    }
+
+    .card {
+        padding: 22px 18px;
+        border-radius: 13px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .top-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .button-group button {
+        width: 100%;
+    }
+}
