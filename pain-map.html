@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediKiosk - Pain Mapping</title>
+    
+
+    <link rel="stylesheet" href="css/pain-map.css">
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+        }
+    }
+    </script>
+
+    <script type="module" src="js/pain-map.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+    <h1>MediKiosk</h1>
+    <p>Patient Pain Mapping</p>
+
+    <button type="button" id="backToPatientBtn">
+        Back to Patient Questionnaire
+    </button>
+</header>
+
+
+<main class="container">
+
+    <section class="body-section">
+        <h2>Select Your Body Type</h2>
+
+        <div class="gender-buttons">
+            <button id="maleBtn" class="active">Male</button>
+            <button id="femaleBtn">Female</button>
+        </div>
+
+        <p class="instruction">
+            Drag the body to rotate it. Scroll to zoom.
+            Select the areas where you experience pain.
+        </p>
+
+        <div id="bodyViewer">
+            <div id="loadingMessage">Loading 3D body...</div>
+        </div>
+
+        <div class="rotation-buttons">
+            <button id="rotateLeftBtn">Rotate Left</button>
+            <button id="rotateRightBtn">Rotate Right</button>
+            <button id="resetViewBtn">Reset View</button>
+            <button id="zoomInBtn">Zoom +</button>
+            <button id="zoomOutBtn">Zoom −</button>
+        </div>
+
+        <p id="selectedRegion">Selected areas: None</p>
+    </section>
+
+    <section class="pain-section">
+        <h2>Pain Details</h2>
+
+        <label for="painIntensity">
+            Pain Intensity: <span id="painValue">0</span>/10
+        </label>
+
+        <input
+            type="range"
+            id="painIntensity"
+            min="0"
+            max="10"
+            value="0"
+        >
+
+        <p id="painDescription">No pain</p>
+
+        <label for="painType">Type of Pain</label>
+        <select id="painType">
+            <option value="Sharp">Sharp</option>
+            <option value="Dull">Dull</option>
+            <option value="Burning">Burning</option>
+            <option value="Aching">Aching</option>
+            <option value="Stabbing">Stabbing</option>
+            <option value="Throbbing">Throbbing</option>
+            <option value="Tingling">Tingling</option>
+            <option value="Numbness">Numbness</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="painDuration">How long have you had this pain?</label>
+        <select id="painDuration">
+            <option value="Today">Today</option>
+            <option value="Few days">A few days</option>
+            <option value="1-2 weeks">1–2 weeks</option>
+            <option value="More than a month">More than a month</option>
+            <option value="More than six months">More than six months</option>
+        </select>
+
+        <label for="painFrequency">How often does it occur?</label>
+        <select id="painFrequency">
+            <option value="Constant">Constant</option>
+            <option value="Frequent">Frequent</option>
+            <option value="Occasional">Occasional</option>
+            <option value="Only during movement">Only during movement</option>
+        </select>
+
+        <button id="addPainBtn">Add Selected Pain</button>
+
+        <h3>Added Pain Locations</h3>
+        <ul id="painLocationList"></ul>
+
+        <button id="savePainBtn">Save Pain Details</button>
+        <p id="saveMessage"></p>
+
+    </section>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediKiosk - Doctor Dashboard</title>
+
+    <link rel="stylesheet" href="css/doctor.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <h2 class="logo">MediKiosk</h2>
+            <p class="sidebar-label">DOCTOR PORTAL</p>
+
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+                <a href="#patients">Patient Cases</a>
+                <a href="#profile">My Profile</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <p>Doctor Account</p>
+                <strong>Dr. Demo</strong>
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h1>Doctor Dashboard</h1>
+                    <p>Welcome back, Doctor!</p>
+                </div>
+
+                <div class="doctor-avatar">D</div>
+            </header>
+
+            <!-- WELCOME SECTION -->
+            <section class="welcome-card">
+                <div>
+                    <h2>Good day, Doctor!</h2>
+                    <p>
+                        Manage patient records, review medical histories
+                        and approve patient case sheets.
+                    </p>
+                </div>
+                <div class="welcome-icon">+</div>
+            </section>
+
+            <!-- SUMMARY CARDS -->
+            
+<!-- DASHBOARD STATISTICS -->
+
+<section class="summary-grid">
+
+    <div class="summary-card">
+        <p>Total Patient Cases</p>
+        <h2 id="totalCases">0</h2>
+        <span>All registered cases</span>
+    </div>
+
+    <div class="summary-card pending">
+        <p>Pending Reviews</p>
+        <h2 id="pendingCases">0</h2>
+        <span>Awaiting doctor review</span>
+    </div>
+
+    <div class="summary-card approved">
+        <p>Approved Cases</p>
+        <h2 id="approvedCases">0</h2>
+        <span>Reviewed and approved</span>
+    </div>
+
+</section>
+
+<!-- END DASHBOARD STATISTICS -->
+
+
+            <!-- PATIENT CASES -->
+            <section class="patient-panel" id="patients">
+
+                <div class="panel-heading">
+                    <div>
+                        <h2>Recent Patient Cases</h2>
+                        <p>Patient records will appear here.</p>
+                    </div>
+
+                    <button type="button">View All Cases</button>
+                </div>
+
+  
+<!-- PATIENT SEARCH AND FILTERS -->
+
+<div class="patient-filters">
+
+    <input
+        type="text"
+        id="patientSearch"
+        placeholder="Search by patient name or ID..."
+    >
+
+    <select id="specialityFilter">
+        <option value="all">All Specialities</option>
+        <option value="General Medicine">General Medicine</option>
+        <option value="Cardiology">Cardiology</option>
+        <option value="Dermatology">Dermatology</option>
+        <option value="Neurology">Neurology</option>
+    </select>
+
+    <select id="statusFilter">
+        <option value="all">All Statuses</option>
+        <option value="pending">Pending</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+    </select>
+<button type="button" id="downloadCasePdfBtn">
+    Download Case PDF
+</button>
+    <button type="button" id="resetFiltersBtn">
+        Reset Filters
+    </button>
+
+</div>
+
+<!-- END PATIENT SEARCH AND FILTERS -->
+              
+<!-- PATIENT CASE TABLE -->
+
+<div class="patient-table-container">
+
+    <table class="patient-table">
+
+        <thead>
+            <tr>
+                <th>Patient ID</th>
+                <th>Patient Name</th>
+                <th>Speciality</th>
+                <th>Submitted Date</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="patientTableBody">
+            <!-- JavaScript will display patient records here -->
+        </tbody>
+
+    </table>
+
+</div>
+
+<!-- END PATIENT CASE TABLE -->
+
+
+            </section>
+
+            <footer>
+                MediKiosk | Doctor Portal
+            </footer>
+
+        </main>
+
+    </div>
+
+<!-- WEEK 3 TASK 5: PATIENT CASE DETAILS WINDOW -->
+
+<div id="caseModal" class="case-modal" hidden>
+
+    <div class="case-modal-content">
+
+        <div class="case-modal-header">
+            <div>
+                <h2>Patient Case Details</h2>
+                <p>Review the patient's medical information</p>
+            </div>
+
+            <button type="button" id="closeCaseBtn" class="close-case-btn">
+                &times;
+            </button>
+        </div>
+
+        <div class="case-details">
+
+            <h3>Personal Information</h3>
+
+            <div class="detail-grid">
+                <p><strong>Patient ID:</strong> <span id="detailPatientId"></span></p>
+                <p><strong>Patient Name:</strong> <span id="detailPatientName"></span></p>
+                <p><strong>Age:</strong> <span id="detailAge"></span></p>
+                <p><strong>Gender:</strong> <span id="detailGender"></span></p>
+                <p><strong>Speciality:</strong> <span id="detailSpeciality"></span></p>
+                <p><strong>Submitted:</strong> <span id="detailDate"></span></p>
+            </div>
+            <!-- WEEK 4 TASK 2: PAIN INFORMATION -->
+
+            <h3>Pain Information</h3>
+
+            <div class="pain-information-panel">
+
+                <p><strong>Pain Intensity:</strong>
+                    <span id="doctorPainIntensity">Not recorded</span>
+                </p>
+
+                <p><strong>Pain Severity:</strong>
+                    <span id="doctorPainSeverity">Not recorded</span>
+                </p>
+
+                <p><strong>Type of Pain:</strong>
+                    <span id="doctorPainType">Not recorded</span>
+                </p>
+
+                <p><strong>Pain Duration:</strong>
+                    <span id="doctorPainDuration">Not recorded</span>
+                </p>
+
+                <p><strong>Pain Frequency:</strong>
+                    <span id="doctorPainFrequency">Not recorded</span>
+                </p>
+
+            </div>
+            <!-- WEEK 4 TASK 3: MULTIPLE PAIN ENTRIES -->
+
+<h3>Reported Pain Locations</h3>
+
+<div id="doctorPainEntries" class="doctor-pain-entries">
+
+    <p>No additional pain locations recorded.</p>
+
+</div>
+
+<!-- END WEEK 4 TASK 3 -->
+
+            <p id="doctorPainMessage" aria-live="polite"></p>
+
+            <!-- END WEEK 4 TASK 2 -->
+            <h3>Current Symptoms</h3>
+            <p id="detailSymptoms"></p>
+
+            <div class="detail-grid">
+                <p><strong>Duration:</strong> <span id="detailDuration"></span></p>
+                <p><strong>Frequency:</strong> <span id="detailFrequency"></span></p>
+                <p><strong>Pain Level:</strong> <span id="detailPain"></span></p>
+            </div>
+
+            <h3>Previous Medical History</h3>
+
+            <p><strong>Previous Illnesses:</strong> <span id="detailIllness"></span></p>
+            <p><strong>Previous Surgeries:</strong> <span id="detailSurgery"></span></p>
+            <p><strong>Medications:</strong> <span id="detailMedication"></span></p>
+            <p><strong>Allergies:</strong> <span id="detailAllergies"></span></p>
+
+            <p class="case-disclaimer">
+                Demonstration data only. Not for clinical decision-making.
+            </p>
+
+        </div>
+        <h3>Pain Information</h3>
+
+<div class="pain-information-panel">
+
+    <p><strong>Pain Intensity:</strong>
+        <span id="doctorPainIntensity">Not recorded</span>
+    </p>
+
+    <p><strong>Pain Severity:</strong>
+        <span id="doctorPainSeverity">Not recorded</span>
+    </p>
+
+    <p><strong>Type of Pain:</strong>
+        <span id="doctorPainType">Not recorded</span>
+    </p>
+
+    <p><strong>Pain Duration:</strong>
+        <span id="doctorPainDuration">Not recorded</span>
+    </p>
+
+    <p><strong>Pain Frequency:</strong>
+        <span id="doctorPainFrequency">Not recorded</span>
+    </p>
+
+</div>
+
+<!-- WEEK 3 TASK 6: EDIT PATIENT CASE -->
+
+<div id="editCaseSection" class="edit-case-section" hidden>
+
+    <h3>Edit Patient Information</h3>
+    <p>Update the patient's information and medical history.</p>
+
+    <div class="edit-form-grid">
+
+        <div class="edit-field">
+            <label for="editAge">Age</label>
+            <input type="number" id="editAge" min="0" max="120">
+        </div>
+
+        <div class="edit-field">
+            <label for="editGender">Gender</label>
+            <select id="editGender">
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Other">Other</option>
+                <option value="Not specified">Not specified</option>
+            </select>
+        </div>
+
+        <div class="edit-field">
+            <label for="editSpeciality">Speciality</label>
+            <select id="editSpeciality">
+                <option value="General Medicine">General Medicine</option>
+                <option value="Cardiology">Cardiology</option>
+                <option value="Dermatology">Dermatology</option>
+                <option value="Neurology">Neurology</option>
+            </select>
+        </div>
+
+        <div class="edit-field">
+            <label for="editDuration">Symptom Duration</label>
+            <input type="text" id="editDuration">
+        </div>
+
+        <div class="edit-field">
+            <label for="editFrequency">Symptom Frequency</label>
+            <input type="text" id="editFrequency">
+        </div>
+
+        <div class="edit-field">
+            <label for="editPain">Pain Level</label>
+            <input type="number" id="editPain" min="0" max="10">
+        </div>
+
+    </div>
+
+    <div class="edit-field">
+        <label for="editSymptoms">Current Symptoms</label>
+        <textarea id="editSymptoms" rows="4"></textarea>
+    </div>
+
+    <div class="edit-field">
+        <label for="editIllness">Previous Illnesses</label>
+        <textarea id="editIllness" rows="2"></textarea>
+    </div>
+
+    <div class="edit-field">
+        <label for="editSurgery">Previous Surgeries</label>
+        <textarea id="editSurgery" rows="2"></textarea>
+    </div>
+
+    <div class="edit-field">
+        <label for="editMedication">Medications</label>
+        <textarea id="editMedication" rows="2"></textarea>
+    </div>
+
+    <div class="edit-field">
+        <label for="editAllergies">Allergies</label>
+        <textarea id="editAllergies" rows="2"></textarea>
+    </div>
+
+    <p id="editMessage" aria-live="polite"></p>
+
+    <div class="edit-buttons">
+        <button type="button" id="saveCaseBtn">Save Changes</button>
+        <button type="button" id="cancelEditBtn">Cancel</button>
+    </div>
+
+</div>
+
+<!-- END WEEK 3 TASK 6 -->
+
+        
+
+<div class="case-modal-footer">
+
+    <button type="button" id="approveCaseBtn">
+        Approve Case
+    </button>
+
+    <button type="button" id="rejectCaseBtn">
+        Reject Case
+    </button>
+
+    <button type="button" id="editCaseBtn">
+        Edit Case
+    </button>
+
+    <button type="button" id="closeCaseFooterBtn">
+        Close
+    </button>
+
+</div>
+
+<p id="caseActionMessage" aria-live="polite"></p>
+
+
+    </div>
+
+</div>
+
+<!-- END WEEK 3 TASK 5 -->
+
+<!-- PRINT-READY PATIENT CASE SHEET -->
+
+<div id="printCaseSheet"></div>
+
+<!-- END PRINT-READY CASE SHEET -->
+
+<script src="js/doctor.js"></script>
+</body>
+</html>

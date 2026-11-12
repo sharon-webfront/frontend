@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +20,7 @@
 
         <!-- LOGIN SECTION -->
         <section id="loginSection" class="card">
+
             <h2 data-en="Patient Login" data-kn="ರೋಗಿ ಲಾಗಿನ್">
                 Patient Login
             </h2>
@@ -28,30 +31,40 @@
             </p>
 
             <label for="language">Select Language</label>
+
             <select id="language">
                 <option value="en">English</option>
                 <option value="kn">ಕನ್ನಡ (Kannada)</option>
             </select>
 
             <form id="loginForm">
+
                 <label for="email" data-en="Email Address"
                        data-kn="ಇಮೇಲ್ ವಿಳಾಸ">Email Address</label>
+
                 <input type="email" id="email" required
                        placeholder="Enter your email">
 
                 <label for="password" data-en="Password"
                        data-kn="ಪಾಸ್‌ವರ್ಡ್">Password</label>
-                <input type="password" id="password" required
-                       minlength="6" placeholder="Enter password">
+
+                <input type="password" id="password"
+                       required minlength="6"
+                       placeholder="Enter password">
 
                 <button type="submit" class="primary-btn"
                         data-en="Login" data-kn="ಲಾಗಿನ್">
                     Login
                 </button>
+
             </form>
 
             <p id="loginMessage" class="message"></p>
-            <p class="small-text">Demo login: use any valid email and a password of at least 6 characters.</p>
+
+            <p class="small-text">
+                Demo login: use any valid email and a password of at least 6 characters.
+            </p>
+
         </section>
 
 
@@ -59,11 +72,13 @@
         <section id="questionnaireSection" class="card hidden">
 
             <div class="top-row">
+
                 <div>
                     <h2 data-en="Patient Questionnaire"
                         data-kn="ರೋಗಿಯ ಪ್ರಶ್ನಾವಳಿ">
                         Patient Questionnaire
                     </h2>
+
                     <p data-en="Please provide your basic medical information."
                        data-kn="ನಿಮ್ಮ ಮೂಲ ವೈದ್ಯಕೀಯ ಮಾಹಿತಿಯನ್ನು ನೀಡಿ.">
                         Please provide your basic medical information.
@@ -74,10 +89,13 @@
                         data-en="Logout" data-kn="ಲಾಗ್ ಔಟ್">
                     Logout
                 </button>
+
             </div>
+
 
             <form id="patientForm">
 
+                <!-- 1. PERSONAL DETAILS -->
                 <h3 data-en="1. Personal Details"
                     data-kn="1. ವೈಯಕ್ತಿಕ ವಿವರಗಳು">
                     1. Personal Details
@@ -85,14 +103,19 @@
 
                 <label for="patientName" data-en="Full Name"
                        data-kn="ಪೂರ್ಣ ಹೆಸರು">Full Name</label>
-                <input type="text" id="patientName" name="patientName"
-                       required>
 
-                <label for="age" data-en="Age" data-kn="ವಯಸ್ಸು">Age</label>
+                <input type="text" id="patientName"
+                       name="patientName" required>
+
+                <label for="age" data-en="Age"
+                       data-kn="ವಯಸ್ಸು">Age</label>
+
                 <input type="number" id="age" name="age"
                        min="1" max="120" required>
 
-                <label for="gender" data-en="Gender" data-kn="ಲಿಂಗ">Gender</label>
+                <label for="gender" data-en="Gender"
+                       data-kn="ಲಿಂಗ">Gender</label>
+
                 <select id="gender" name="gender" required>
                     <option value="">Select</option>
                     <option value="Female">Female</option>
@@ -101,6 +124,8 @@
                     <option value="Prefer not to say">Prefer not to say</option>
                 </select>
 
+
+                <!-- 2. MEDICAL INFORMATION -->
                 <h3 data-en="2. Medical Information"
                     data-kn="2. ವೈದ್ಯಕೀಯ ಮಾಹಿತಿ">
                     2. Medical Information
@@ -121,6 +146,8 @@
                     <option value="Other">Other</option>
                 </select>
 
+
+                <!-- 3. CURRENT SYMPTOMS -->
                 <h3 data-en="3. Current Symptoms"
                     data-kn="3. ಪ್ರಸ್ತುತ ಲಕ್ಷಣಗಳು">
                     3. Current Symptoms
@@ -130,7 +157,9 @@
                        data-kn="ನಿಮ್ಮ ಲಕ್ಷಣಗಳನ್ನು ವಿವರಿಸಿ">
                     Describe your symptoms
                 </label>
-                <textarea id="symptoms" name="symptoms" rows="4"
+
+                <textarea id="symptoms" name="symptoms"
+                          rows="4"
                           placeholder="Describe what you are experiencing..."
                           required></textarea>
 
@@ -138,18 +167,22 @@
                        data-kn="ಇದು ಯಾವಾಗ ಪ್ರಾರಂಭವಾಯಿತು?">
                     When did it start?
                 </label>
+
                 <input type="text" id="onset" name="onset"
                        placeholder="Example: 2 days ago">
 
                 <label for="duration" data-en="Duration"
                        data-kn="ಅವಧಿ">Duration</label>
+
                 <input type="text" id="duration" name="duration"
                        placeholder="Example: 30 minutes">
 
-                <label for="frequency" data-en="How often does it occur?"
+                <label for="frequency"
+                       data-en="How often does it occur?"
                        data-kn="ಇದು ಎಷ್ಟು ಬಾರಿ ಸಂಭವಿಸುತ್ತದೆ?">
                     How often does it occur?
                 </label>
+
                 <select id="frequency" name="frequency">
                     <option value="">Select</option>
                     <option value="Constant">Constant</option>
@@ -158,63 +191,194 @@
                     <option value="Rarely">Rarely</option>
                 </select>
 
-                <h3 data-en="4. Previous Medical History"
-                    data-kn="4. ಹಿಂದಿನ ವೈದ್ಯಕೀಯ ಇತಿಹಾಸ">
-                    4. Previous Medical History
+
+                <!-- 4. AUDIO-BASED SYMPTOM INPUT -->
+                <div class="audio-section">
+
+                    <h3>4. Audio-Based Symptom Input</h3>
+
+                    <p>
+                        Record your symptoms or upload an audio recording.
+                        You can review and confirm the transcript.
+                    </p>
+
+
+                    <!-- TASK 1: RECORD AUDIO -->
+                    <h4>Task 1: Record Your Symptoms</h4>
+
+                    <button type="button" id="startRecordingBtn">
+                        Start Recording
+                    </button>
+
+                    <button type="button" id="stopRecordingBtn" disabled>
+                        Stop Recording
+                    </button>
+
+                    <p id="recordingStatus">Not recording</p>
+
+                    <p id="recordingTimer">00:00</p>
+
+                    <audio id="audioPlayback" controls hidden></audio>
+
+
+                    <!-- TASK 2: UPLOAD AUDIO -->
+                    <h4>Task 2: Upload Audio</h4>
+
+                    <label for="audioFile">
+                        Select an audio file
+                    </label>
+
+                    <input type="file" id="audioFile"
+                           accept="audio/*">
+
+                    <p id="uploadStatus"></p>
+
+                    <audio id="uploadedAudioPlayback"
+                           controls hidden></audio>
+
+
+                    <!-- TASK 3: TRANSCRIPT REVIEW -->
+                    <h4>Task 3: Review Transcript</h4>
+
+                    <label for="transcriptText">
+                        Review or edit the transcript
+                    </label>
+
+                    <textarea id="transcriptText"
+                              rows="4"
+                              placeholder="Enter or review your transcript here..."></textarea>
+
+                    <p id="characterCount">Characters: 0</p>
+
+                    <button type="button" id="clearTranscriptBtn">
+                        Clear Transcript
+                    </button>
+
+                    <button type="button" id="saveTranscriptBtn">
+                        Save Transcript
+                    </button>
+
+                    <p id="transcriptMessage"></p>
+
+
+                    <!-- TASK 4: TRANSCRIPT CONFIRMATION -->
+                    <h4>Task 4: Confirm Transcript</h4>
+
+                    <button type="button" id="confirmTranscriptBtn">
+                        Confirm Transcript
+                    </button>
+
+                    <p id="reviewStatus"></p>
+
+
+                    <!-- TASK 5: AUDIO PROCESSING -->
+                    <h4>Task 5: Audio Processing</h4>
+
+                    <p id="processingStatus">Ready</p>
+
+                    <p id="processingMessage"></p>
+
+                    <div class="progress-container">
+                        <div id="processingProgressBar"></div>
+                    </div>
+
+                    <button type="button" id="processAudioBtn">
+                        Process Audio
+                    </button>
+
+                    <button type="button" id="retryProcessingBtn" hidden>
+                        Retry
+                    </button>
+
+
+                    <!-- TASK 6: TRANSFER TRANSCRIPT -->
+                    <h4>Task 6: Add Transcript to Symptoms</h4>
+
+                    <p>
+                        Add your confirmed transcript to the current symptoms field.
+                    </p>
+
+                    <button type="button" id="useTranscriptBtn" disabled>
+                        Use Confirmed Transcript
+                    </button>
+
+                </div>
+
+
+                <!-- 5. PREVIOUS MEDICAL HISTORY -->
+                <h3 data-en="5. Previous Medical History"
+                    data-kn="5. ಹಿಂದಿನ ವೈದ್ಯಕೀಯ ಇತಿಹಾಸ">
+                    5. Previous Medical History
                 </h3>
 
                 <label for="illness" data-en="Previous illnesses"
                        data-kn="ಹಿಂದಿನ ಕಾಯಿಲೆಗಳು">
                     Previous illnesses
                 </label>
+
                 <textarea id="illness" name="illness" rows="2"></textarea>
 
                 <label for="surgery" data-en="Previous surgeries"
                        data-kn="ಹಿಂದಿನ ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಗಳು">
                     Previous surgeries
                 </label>
+
                 <textarea id="surgery" name="surgery" rows="2"></textarea>
 
                 <label for="medications" data-en="Current medications"
                        data-kn="ಪ್ರಸ್ತುತ ಔಷಧಿಗಳು">
                     Current medications
                 </label>
+
                 <textarea id="medications" name="medications" rows="2"></textarea>
 
                 <label for="allergies" data-en="Known allergies"
                        data-kn="ತಿಳಿದಿರುವ ಅಲರ್ಜಿಗಳು">
                     Known allergies
                 </label>
+
                 <textarea id="allergies" name="allergies" rows="2"></textarea>
 
+
+                <!-- FORM BUTTONS -->
                 <div class="button-group">
+
                     <button type="button" id="saveBtn" class="primary-btn"
                             data-en="Save Draft" data-kn="ಉಳಿಸಿ">
                         Save Draft
                     </button>
 
                     <button type="button" id="loadBtn" class="secondary-btn"
-                            data-en="Reload Saved Answers" data-kn="ಉಳಿಸಿದ ಉತ್ತರಗಳನ್ನು ಮರುಲೋಡ್ ಮಾಡಿ">
+                            data-en="Reload Saved Answers"
+                            data-kn="ಉಳಿಸಿದ ಉತ್ತರಗಳನ್ನು ಮರುಲೋಡ್ ಮಾಡಿ">
                         Reload Saved Answers
                     </button>
 
                     <button type="submit" class="submit-btn"
-                            data-en="Submit Questionnaire" data-kn="ಪ್ರಶ್ನಾವಳಿಯನ್ನು ಸಲ್ಲಿಸಿ">
+                            data-en="Submit Questionnaire"
+                            data-kn="ಪ್ರಶ್ನಾವಳಿಯನ್ನು ಸಲ್ಲಿಸಿ">
                         Submit Questionnaire
                     </button>
+
                 </div>
 
                 <p id="formMessage" class="message"></p>
 
             </form>
+
         </section>
 
     </main>
 
+
+    <!-- FOOTER -->
     <footer>
         <p>©️ 2026 MediKiosk | Student Project Prototype</p>
     </footer>
 
+
+    <!-- JAVASCRIPT -->
     <script src="js/script.js"></script>
+
 </body>
 </html>

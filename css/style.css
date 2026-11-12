@@ -281,3 +281,356 @@ footer {
         width: 100%;
     }
 }
+/* WEEK 2: VOICE RECORDING DESIGN */
+
+.voice-section {
+    margin-top: 25px;
+    padding: 20px;
+    background: #eaf6f5;
+    border: 1px solid #c8e5e1;
+    border-radius: 12px;
+}
+
+.voice-section h3 {
+    color: #075e63;
+    margin-bottom: 10px;
+}
+
+.voice-section p {
+    color: #405568;
+    line-height: 1.6;
+}
+
+.recording-controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 18px 0;
+}
+
+#startRecordingBtn,
+#stopRecordingBtn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#startRecordingBtn {
+    background: #087f83;
+    color: white;
+}
+
+#stopRecordingBtn {
+    background: #b84242;
+    color: white;
+}
+
+#startRecordingBtn:disabled,
+#stopRecordingBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#recordingTimer {
+    font-size: 25px;
+    font-weight: bold;
+    color: #075e63;
+}
+
+#audioPlayback {
+    width: 100%;
+    margin-top: 12px;
+}
+
+/* WEEK 2 - TASK 2: AUDIO UPLOAD */
+
+.upload-section {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f0f7fb;
+    border: 1px solid #c9dfe9;
+    border-radius: 12px;
+}
+
+.upload-section h3 {
+    color: #173b57;
+    margin-bottom: 10px;
+}
+
+.upload-section p {
+    color: #405568;
+    line-height: 1.6;
+}
+
+.upload-label {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 20px;
+    background: #087f83;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.upload-label:hover {
+    background: #075e63;
+}
+
+#audioFile {
+    display: none;
+}
+
+#uploadedAudioPlayback {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+}
+
+#uploadedAudioPlayback[hidden] {
+    display: none;
+}
+
+/* WEEK 2 - TASK 3: TRANSCRIPT DESIGN */
+
+.transcript-section {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f1f7fa;
+    border: 1px solid #cbdfe8;
+    border-radius: 12px;
+}
+
+.transcript-section h3 {
+    color: #173b57;
+    margin-bottom: 10px;
+}
+
+.transcript-section label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #173b57;
+}
+
+#transcriptText {
+    width: 100%;
+    min-height: 130px;
+    padding: 12px;
+    border: 1px solid #b8ced8;
+    border-radius: 8px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+#characterCount {
+    text-align: right;
+    font-size: 13px;
+    color: #607785;
+    margin-top: 6px;
+}
+
+.transcript-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.transcript-buttons button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#clearTranscriptBtn {
+    background: #e5e9ed;
+    color: #34495e;
+}
+
+#saveTranscriptBtn {
+    background: #087f83;
+    color: white;
+}
+
+.transcript-buttons button:hover {
+    opacity: 0.85;
+}
+
+/* WEEK 2 - TASK 4: TRANSCRIPT REVIEW */
+
+.transcript-review {
+    margin-top: 20px;
+    padding: 18px;
+    background: #e8f5f1;
+    border: 1px solid #b8ddd2;
+    border-radius: 10px;
+}
+
+.transcript-review h4 {
+    color: #075e63;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.transcript-review p {
+    color: #405568;
+    line-height: 1.6;
+}
+
+#confirmTranscriptBtn {
+    margin-top: 10px;
+    padding: 12px 20px;
+    background: #087f83;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#confirmTranscriptBtn:hover {
+    background: #075e63;
+}
+
+#confirmTranscriptBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* WEEK 2 TASK 5: AUDIO PROCESSING STATUS */
+
+.processing-section {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff8ed;
+    border: 1px solid #f0d9b5;
+    border-radius: 12px;
+}
+
+.processing-section h3 {
+    color: #80551d;
+    margin-bottom: 12px;
+}
+
+#processingStatus {
+    font-weight: 600;
+    color: #405568;
+    margin-bottom: 12px;
+}
+
+#processingMessage {
+    color: #607785;
+    margin-top: 12px;
+    line-height: 1.5;
+}
+
+.processing-progress {
+    width: 100%;
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+#processingProgressBar {
+    width: 0%;
+    height: 100%;
+    background: #087f83;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+#processAudioBtn,
+#retryProcessingBtn {
+    margin-top: 12px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #087f83;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#retryProcessingBtn {
+    background: #526779;
+}
+
+#processAudioBtn:disabled,
+#retryProcessingBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+/* WEEK 2 TASK 6: USE TRANSCRIPT */
+
+#useTranscriptBtn {
+    margin-top: 10px;
+    margin-left: 8px;
+    padding: 12px 20px;
+    background: #315f86;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#useTranscriptBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#useTranscriptBtn:hover:not(:disabled) {
+    background: #244968;
+}
+
+/* AUDIO SYMPTOM INPUT */
+
+.audio-section {
+    margin: 25px 0;
+    padding: 20px;
+    background: #f3f7f8;
+    border-radius: 10px;
+}
+
+.audio-section h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.audio-section button {
+    margin: 6px 4px;
+}
+
+.audio-section textarea,
+.audio-section input[type="file"] {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.progress-container {
+    width: 100%;
+    height: 12px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 12px 0;
+}
+
+#processingProgressBar {
+    width: 0%;
+    height: 100%;
+    background: #087f8c;
+    transition: width 0.3s;
+}
